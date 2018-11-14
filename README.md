@@ -1,0 +1,1 @@
+encrypterChar
