@@ -55,12 +55,7 @@ public class ClientController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-//		ClientConnection client = new ClientConnection(1111);
-//		//JsonMessage message1 = new JsonMessage(MessageType.PING, new String("andrzej"), new String("pass"), new String("pass"));
-//
-//		client.start();
-//		client.register("Stefano", "pas123", "pas123");
-//		client.login("Stefano", "pas123");
+
 		
 	}
 	public void registerButton() {

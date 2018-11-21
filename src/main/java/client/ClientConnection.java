@@ -42,7 +42,7 @@ public class ClientConnection extends Thread {
 //                	System.out.println("text: " + text);
 //                	System.out.println(getEncodingKey(jsonMessage.getP1(), jsonMessage.getP2()));
 //                	text = encrypter.decrypt(text, getEncodingKey(jsonMessage.getP1(), jsonMessage.getP2()));
-//                	text = encrypter.decrypt(text,getEncodingKey(jsonMessage.getP1(), jsonMessage.getP2()));
+                	text = encrypter.decrypt(text,getEncodingKey(jsonMessage.getP1(), jsonMessage.getP2()));
                 	controller.setMessageTextField(text);
                 }
                 if (jsonMessage.getMsgType() == MessageType.LIST) {
@@ -95,7 +95,7 @@ public class ClientConnection extends Thread {
 //    	
 //    	text = encrypter.decrypt(text, getEncodingKey(login, loginDest));
 //    	System.out.println("decr: " + text);
-//    	text = encrypter.encrypt(text, getEncodingKey(login, loginDest));
+    	text = encrypter.encrypt(text, getEncodingKey(login, loginDest));
 //    	System.out.println("enc: " + text);
     	JsonMessage message = new JsonMessage(MessageType.TEXT, login, loginDest, text);
     	sendMessage(message.toString());

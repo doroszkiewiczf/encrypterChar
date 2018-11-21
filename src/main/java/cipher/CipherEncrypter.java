@@ -46,24 +46,24 @@ public class CipherEncrypter {
 		}
 		return ceasarMessage;
 	}
-	
 	public String decryptCeasar(String message) {
 		char[] charMessage = message.toCharArray();
 		String ceasarMessage = "";
 		int keyCharNum = 0;
 		for (char c: charMessage){
-			c = (char)(c - key.charAt(keyCharNum));
+			int move = (int) key.charAt(keyCharNum);
+			
 			//System.out.println("C = " + c + "int(C) = " + (int)c);
 			//System.out.println((int)key.charAt(keyCharNum) + " to jest:" + key.charAt(keyCharNum));
-			if ((int)c > 255) {
-				c = (char)(256 - c);
-			}
+			move = ((c - move) % 256 + 256) % 256;
+			c = (char) move;
 			//System.out.println("POOOOO C = " + c + "int(C) = " + (int)c);
 			keyCharNum = (keyCharNum + 1)% key.length();
 			ceasarMessage += c;
 		}
 		return ceasarMessage;
 	}
+
 	public String encrypt(String message, String cipherKey) {
 		if (cipherKey == "") {
 			key = DEFAULT_KEY;
